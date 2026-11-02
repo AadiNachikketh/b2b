@@ -18,7 +18,28 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="./src/main.tsx"></script>
+    <script>
+      window.__loadStaticFallbackBundle = function () {
+        if (window.__staticFallbackLoaded) return;
+        window.__staticFallbackLoaded = true;
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.href = './static-dist/app.css';
+        document.head.appendChild(link);
+        var script = document.createElement('script');
+        script.type = 'module';
+        script.src = './static-dist/app.js';
+        document.body.appendChild(script);
+      };
+    </script>
+    <script type="module" src="./src/main.tsx" onerror="window.__loadStaticFallbackBundle()"></script>
+    <script>
+      setTimeout(function () {
+        var root = document.getElementById('root');
+        if (root && root.childNodes.length === 0 && !window.__vite_plugin_react_preamble_installed__) {
+          window.__loadStaticFallbackBundle();
+        }
+      }, 300);
+    </script>
   </body>
 </html>
-
