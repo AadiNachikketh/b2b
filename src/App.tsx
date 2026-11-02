@@ -41,11 +41,16 @@ import {
 } from './components/SaaSDashboardView';
 import { PublicPages } from './components/PublicPages';
 import { AIChatbotWidget } from './components/AIChatbotWidget';
+import {
+  normalizeAppPath,
+  toBrowserUrlPath,
+  fetchCmsWithFallback
+} from './utils/staticFallback';
 
 export default function App() {
   const [currentPath, setCurrentPath] = useState<string>(() => {
     if (typeof window !== 'undefined') {
-      return window.location.pathname || '/';
+      return normalizeAppPath(window.location.pathname || '/');
     }
     return '/';
   });
@@ -133,7 +138,11 @@ export default function App() {
   const navigate = useCallback((path: string) => {
     const target = path.startsWith('/') ? path : `/${path}`;
     if (typeof window !== 'undefined') {
-      window.history.pushState({}, '', target);
+      try {
+        window.history.pushState({}, '', toBrowserUrlPath(target));
+      } catch {
+        // Fallback if history.pushState is restricted in sandboxed Discord iframe
+      }
       window.scrollTo({ top: 0, behavior: 'smooth' });
     }
     setCurrentPath(target);
@@ -142,21 +151,16 @@ export default function App() {
 
   useEffect(() => {
     const onPopState = () => {
-      setCurrentPath(window.location.pathname || '/');
+      setCurrentPath(normalizeAppPath(window.location.pathname || '/'));
     };
     window.addEventListener('popstate', onPopState);
     return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   const refreshCmsFromServer = useCallback(async () => {
-    try {
-      const res = await fetch('/api/cms/articles');
-      const data = await res.json();
-      if (Array.isArray(data.articles)) setArticles(data.articles);
-      if (data.redirects) setRedirects(data.redirects);
-    } catch {
-      // fallback to initial state
-    }
+    const data = await fetchCmsWithFallback();
+    if (Array.isArray(data.articles)) setArticles(data.articles);
+    if (data.redirects) setRedirects(data.redirects);
   }, []);
 
   useEffect(() => {
@@ -165,33 +169,39 @@ export default function App() {
 
   // Listen to Firebase Auth and sync user profile & subscription
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, async (u) => {
-      setFirebaseUser(u);
-      if (u && u.emailVerified) {
-        try {
-          const userDocRef = doc(db, 'users', u.uid);
-          const snap = await getDoc(userDocRef);
-          if (!snap.exists()) {
-            await setDoc(userDocRef, {
-              uid: u.uid,
-              displayName: (u.displayName || u.email || 'Subscriber').slice(0, 100),
-              role: u.email === 'aadipasso1@gmail.com' ? 'admin' : 'subscriber',
-              tier: currentPlanId,
-              createdAt: serverTimestamp()
-            });
-          } else {
-            const data = snap.data();
-            if (data.tier && SAAS_PLANS[data.tier as PlanId]) {
-              setCurrentPlanId(data.tier as PlanId);
+    let unsub: (() => void) | undefined;
+    try {
+      unsub = onAuthStateChanged(auth, async (u) => {
+        setFirebaseUser(u);
+        if (u && u.emailVerified) {
+          try {
+            const userDocRef = doc(db, 'users', u.uid);
+            const snap = await getDoc(userDocRef);
+            if (!snap.exists()) {
+              await setDoc(userDocRef, {
+                uid: u.uid,
+                displayName: (u.displayName || u.email || 'Subscriber').slice(0, 100),
+                role: u.email === 'aadipasso1@gmail.com' ? 'admin' : 'subscriber',
+                tier: currentPlanId,
+                createdAt: serverTimestamp()
+              });
+            } else {
+              const data = snap.data();
+              if (data.tier && SAAS_PLANS[data.tier as PlanId]) {
+                setCurrentPlanId(data.tier as PlanId);
+              }
             }
+          } catch (err) {
+            console.warn('Firestore profile sync skipped or pending:', err);
           }
-        } catch (err) {
-          // Only report permission errors via handleFirestoreError if unexpected
-          console.warn('Firestore profile sync skipped or pending:', err);
         }
-      }
-    });
-    return () => unsub();
+      });
+    } catch (err) {
+      console.warn('Firebase Auth listener unavailable in sandboxed environment:', err);
+    }
+    return () => {
+      if (unsub) unsub();
+    };
   }, []);
 
   const handleGoogleSignIn = async () => {

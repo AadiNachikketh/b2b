@@ -19,6 +19,11 @@ import {
   PlanId,
   BillingCycle
 } from '../utils/saasEngine';
+import {
+  fetchLeadsWithFallback,
+  updateLeadWithFallback,
+  saveCmsArticleWithFallback
+} from '../utils/staticFallback';
 import { BlogPostRecord } from '../data/siteContent';
 import { AuditResultPayload } from './AuditToolView';
 import { SEOHead } from './SEOHead';
@@ -139,11 +144,8 @@ export function SaaSDashboardView({
   const fetchLeadsFromServer = async () => {
     setIsLoadingLeads(true);
     try {
-      const res = await fetch('/api/leads');
-      const data = await res.json();
-      if (Array.isArray(data.leads)) {
-        setLeads(data.leads);
-      }
+      const list = await fetchLeadsWithFallback();
+      setLeads(list);
     } catch {
       // ignore
     } finally {
@@ -182,14 +184,8 @@ export function SaaSDashboardView({
 
   const handleUpdateLeadStatus = async (leadId: string, status: LeadItem['status'], internalNotes: string) => {
     try {
-      const res = await fetch(`/api/leads/${leadId}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ status, internalNotes })
-      });
-      if (res.ok) {
-        await fetchLeadsFromServer();
-      }
+      await updateLeadWithFallback(leadId, status, internalNotes);
+      await fetchLeadsFromServer();
     } catch {
       // ignore
     }
@@ -247,34 +243,28 @@ export function SaaSDashboardView({
       return;
     }
     try {
-      const res = await fetch('/api/cms/articles', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          id: editingArticleId || undefined,
-          title: cmsTitle,
-          slug: cmsSlug,
-          category: cmsCategory,
-          status: cmsStatus,
-          excerpt: cmsExcerpt,
-          seoTitle: cmsSeoTitle || `${cmsTitle} | Mehula ADMediaTek`,
-          seoDescription: cmsSeoDesc || cmsExcerpt,
-          canonicalUrl: cmsCanonical || `/blog/${cmsSlug}/`,
-          featuredImageAlt: cmsTitle,
-          bodyParagraph: cmsBody || cmsExcerpt,
-          role: rbacRole
-        })
+      const result = await saveCmsArticleWithFallback({
+        id: editingArticleId || undefined,
+        title: cmsTitle,
+        slug: cmsSlug,
+        category: cmsCategory,
+        status: cmsStatus,
+        excerpt: cmsExcerpt,
+        seoTitle: cmsSeoTitle || `${cmsTitle} | Mehula ADMediaTek`,
+        seoDescription: cmsSeoDesc || cmsExcerpt,
+        canonicalUrl: cmsCanonical || `/blog/${cmsSlug}/`,
+        bodyText: cmsBody || cmsExcerpt,
+        role: rbacRole
       });
-      const data = await res.json();
-      if (!res.ok) {
-        setCmsFeedback(data.error || 'Could not save article.');
+      if (!result.ok) {
+        setCmsFeedback(result.error || 'Could not save article.');
         return;
       }
       await onRefreshCms();
       setCmsFeedback(
         editingArticleId
-          ? `Updated article "${data.article.title}" (${data.article.status}). Any slug change was automatically registered in the 301 Redirect table.`
-          : `Created new article "${data.article.title}" (${data.article.status}).`
+          ? `Updated article "${cmsTitle}" (${cmsStatus}). Any slug change was automatically registered in the 301 Redirect table.`
+          : `Created new article "${cmsTitle}" (${cmsStatus}).`
       );
       if (!editingArticleId) {
         handleResetCmsForm();

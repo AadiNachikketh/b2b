@@ -19,6 +19,7 @@ import {
   BlogPostRecord
 } from '../data/siteContent';
 import { SAAS_PLANS } from '../utils/saasEngine';
+import { submitLeadWithFallback } from '../utils/staticFallback';
 import { SEOHead, trackConversionEvent } from './SEOHead';
 
 interface PublicPagesProps {
@@ -69,25 +70,20 @@ export function PublicPages({
 
     setFormStatus('submitting');
     try {
-      const res = await fetch('/api/leads', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: formName,
-          email: formEmail,
-          company: formCompany,
-          websiteUrl: formWebsite,
-          serviceInterest: formService,
-          message: formMessage,
-          preferredContact: formPreferredContact,
-          source,
-          consentStatus: formConsent
-        })
+      const result = await submitLeadWithFallback({
+        name: formName,
+        email: formEmail,
+        company: formCompany,
+        websiteUrl: formWebsite,
+        serviceInterest: formService,
+        message: formMessage,
+        preferredContact: formPreferredContact,
+        source,
+        consentStatus: formConsent
       });
-      const data = await res.json();
-      if (!res.ok) {
+      if (!result.ok) {
         setFormStatus('error');
-        setFormErrorMsg(data.error || 'Could not submit inquiry.');
+        setFormErrorMsg(result.error || 'Could not submit inquiry.');
         return;
       }
       setFormStatus('success');

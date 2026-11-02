@@ -11,6 +11,7 @@ import {
   FileText
 } from 'lucide-react';
 import { AuditCheckItem } from '../utils/saasEngine';
+import { runAuditWithFallback } from '../utils/staticFallback';
 import { SEOHead, trackConversionEvent } from './SEOHead';
 
 export interface AuditResultPayload {
@@ -81,27 +82,22 @@ export function AuditToolView({
     trackConversionEvent('audit_request_submitted', '/free-seo-audit/');
 
     try {
-      const res = await fetch('/api/audit', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          url: urlInput,
-          email: emailInput,
-          name: nameInput,
-          company: companyInput,
-          targetMarket,
-          consent
-        })
+      const result = await runAuditWithFallback({
+        url: urlInput,
+        email: emailInput,
+        name: nameInput,
+        company: companyInput,
+        targetMarket,
+        consent
       });
-      const data = await res.json();
-      if (!res.ok) {
-        setErrorMessage(data.error || 'Could not complete website analysis.');
+      if (!result.ok || !result.data) {
+        setErrorMessage(result.error || 'Could not complete website analysis.');
         return;
       }
-      setAuditResult(data);
+      setAuditResult(result.data);
       trackConversionEvent('audit_completed', '/free-seo-audit/');
       if (onSaveAuditToWorkspace) {
-        await onSaveAuditToWorkspace(data);
+        await onSaveAuditToWorkspace(result.data);
         setSaveMessage('Saved to your SaaS User Dashboard & quota updated.');
       }
     } catch {

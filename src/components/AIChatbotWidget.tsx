@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MessageSquare, X, Send, ArrowRight } from 'lucide-react';
 import { trackConversionEvent } from './SEOHead';
+import { sendChatWithFallback, submitLeadWithFallback } from '../utils/staticFallback';
 
 interface ChatMessage {
   id: string;
@@ -57,22 +58,17 @@ export function AIChatbotWidget({ onNavigate, onLeadCaptured }: AIChatbotWidgetP
     setIsLoading(true);
 
     try {
-      const res = await fetch('/api/chatbot', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: trimmed,
-          history: nextHistory.map((m) => ({ role: m.role, text: m.text }))
-        })
-      });
-      const data = await res.json();
+      const reply = await sendChatWithFallback(
+        trimmed,
+        nextHistory.map((m) => ({ role: m.role, text: m.text }))
+      );
       setMessages((prev) => [
         ...prev,
         {
           id: `a-${Date.now()}`,
           role: 'assistant',
           text:
-            data.reply ||
+            reply ||
             'We can help investigate that. Would you like to run a Free SEO Audit or request a consultation?'
         }
       ]);
@@ -107,24 +103,19 @@ export function AIChatbotWidget({ onNavigate, onLeadCaptured }: AIChatbotWidgetP
     }
 
     try {
-      const res = await fetch('/api/leads', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: leadName,
-          email: leadEmail,
-          company: leadWebsite || 'Chatbot Inquiry',
-          websiteUrl: leadWebsite,
-          serviceInterest: leadGoal,
-          message: `Chatbot lead capture. Goal: ${leadGoal}`,
-          preferredContact: 'Email',
-          source: 'ai_chatbot',
-          consentStatus: leadConsent
-        })
+      const result = await submitLeadWithFallback({
+        name: leadName,
+        email: leadEmail,
+        company: leadWebsite || 'Chatbot Inquiry',
+        websiteUrl: leadWebsite,
+        serviceInterest: leadGoal,
+        message: `Chatbot lead capture. Goal: ${leadGoal}`,
+        preferredContact: 'Email',
+        source: 'ai_chatbot',
+        consentStatus: leadConsent
       });
-      const data = await res.json();
-      if (!res.ok) {
-        setLeadError(data.error || 'Could not save inquiry.');
+      if (!result.ok) {
+        setLeadError(result.error || 'Could not save inquiry.');
         return;
       }
       setLeadSubmitted(true);
