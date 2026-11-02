@@ -1,0 +1,246 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Pillar 1 & Phase 4.1: Global Safety Net
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Phase 3: Primitive Definitions
+    function isValidId(id) {
+      return id is string && id.size() >= 1 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    function isSignedIn() {
+      return request.auth != null && request.auth.token.email_verified == true;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && (
+        request.auth.token.email == 'aadipasso1@gmail.com' ||
+        exists(/databases/$(database)/documents/admins/$(request.auth.uid))
+      );
+    }
+
+    // Validation Helpers (Pillar 2: Anti-Update-Gap)
+    function isValidUserPublic(data) {
+      return data.keys().hasAll(['uid', 'displayName', 'role', 'tier', 'createdAt']) &&
+        data.keys().hasOnly(['uid', 'displayName', 'role', 'tier', 'createdAt']) &&
+        data.uid is string && data.uid.size() >= 1 && data.uid.size() <= 128 && data.uid.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.displayName is string && data.displayName.size() >= 1 && data.displayName.size() <= 100 &&
+        data.role is string && data.role in ['subscriber', 'author', 'editor', 'admin'] &&
+        data.tier is string && data.tier in ['free', 'starter', 'growth', 'agency'] &&
+        data.createdAt is timestamp;
+    }
+
+    function isValidUserPrivate(data) {
+      return data.keys().hasAll(['uid', 'email', 'companyName', 'primaryWebsite', 'updatedAt']) &&
+        data.keys().hasOnly(['uid', 'email', 'companyName', 'primaryWebsite', 'updatedAt']) &&
+        data.uid is string && data.uid.size() >= 1 && data.uid.size() <= 128 && data.uid.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.email is string && data.email.size() >= 3 && data.email.size() <= 254 &&
+        data.companyName is string && data.companyName.size() <= 120 &&
+        data.primaryWebsite is string && data.primaryWebsite.size() <= 256 &&
+        data.updatedAt is timestamp;
+    }
+
+    function isValidSubscription(data) {
+      return data.keys().hasAll([
+          'ownerId', 'planId', 'billingCycle', 'status', 'amountUsd',
+          'auditsUsed', 'auditLimit', 'keywordsTracked', 'keywordLimit',
+          'autoRenew', 'paymentLast4', 'nextBillingDate', 'createdAt', 'updatedAt'
+        ]) &&
+        data.keys().hasOnly([
+          'ownerId', 'planId', 'billingCycle', 'status', 'amountUsd',
+          'auditsUsed', 'auditLimit', 'keywordsTracked', 'keywordLimit',
+          'autoRenew', 'paymentLast4', 'nextBillingDate', 'createdAt', 'updatedAt'
+        ]) &&
+        data.ownerId is string && data.ownerId.size() >= 1 && data.ownerId.size() <= 128 && data.ownerId.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.planId is string && data.planId in ['free', 'starter', 'growth', 'agency'] &&
+        data.billingCycle is string && data.billingCycle in ['monthly', 'annual'] &&
+        data.status is string && data.status in ['active', 'past_due', 'canceled'] &&
+        data.amountUsd is number && data.amountUsd >= 0 && data.amountUsd <= 100000 &&
+        data.auditsUsed is int && data.auditsUsed >= 0 && data.auditsUsed <= 100000 &&
+        data.auditLimit is int && data.auditLimit >= 1 && data.auditLimit <= 100000 &&
+        data.keywordsTracked is int && data.keywordsTracked >= 0 && data.keywordsTracked <= 100000 &&
+        data.keywordLimit is int && data.keywordLimit >= 1 && data.keywordLimit <= 100000 &&
+        data.autoRenew is bool &&
+        data.paymentLast4 is string && data.paymentLast4.size() <= 4 &&
+        data.nextBillingDate is string && data.nextBillingDate.size() >= 1 && data.nextBillingDate.size() <= 40 &&
+        data.createdAt is timestamp &&
+        data.updatedAt is timestamp;
+    }
+
+    function isValidInvoice(data) {
+      return data.keys().hasAll([
+          'ownerId', 'invoiceNumber', 'planName', 'billingCycle',
+          'amountUsd', 'status', 'issuedDate', 'createdAt'
+        ]) &&
+        data.keys().hasOnly([
+          'ownerId', 'invoiceNumber', 'planName', 'billingCycle',
+          'amountUsd', 'status', 'issuedDate', 'createdAt'
+        ]) &&
+        data.ownerId is string && data.ownerId.size() >= 1 && data.ownerId.size() <= 128 && data.ownerId.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.invoiceNumber is string && data.invoiceNumber.size() >= 1 && data.invoiceNumber.size() <= 40 &&
+        data.planName is string && data.planName.size() >= 1 && data.planName.size() <= 60 &&
+        data.billingCycle is string && data.billingCycle in ['monthly', 'annual'] &&
+        data.amountUsd is number && data.amountUsd >= 0 && data.amountUsd <= 100000 &&
+        data.status is string && data.status in ['paid', 'void'] &&
+        data.issuedDate is string && data.issuedDate.size() >= 1 && data.issuedDate.size() <= 40 &&
+        data.createdAt is timestamp;
+    }
+
+    function isValidSavedAudit(data) {
+      return data.keys().hasAll([
+          'ownerId', 'targetUrl', 'overallScore', 'passedCount',
+          'warningCount', 'failedCount', 'summaryText', 'createdAt'
+        ]) &&
+        data.keys().hasOnly([
+          'ownerId', 'targetUrl', 'overallScore', 'passedCount',
+          'warningCount', 'failedCount', 'summaryText', 'createdAt'
+        ]) &&
+        data.ownerId is string && data.ownerId.size() >= 1 && data.ownerId.size() <= 128 && data.ownerId.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.targetUrl is string && data.targetUrl.size() >= 4 && data.targetUrl.size() <= 256 &&
+        data.overallScore is int && data.overallScore >= 0 && data.overallScore <= 100 &&
+        data.passedCount is int && data.passedCount >= 0 && data.passedCount <= 500 &&
+        data.warningCount is int && data.warningCount >= 0 && data.warningCount <= 500 &&
+        data.failedCount is int && data.failedCount >= 0 && data.failedCount <= 500 &&
+        data.summaryText is string && data.summaryText.size() >= 1 && data.summaryText.size() <= 1000 &&
+        data.createdAt is timestamp;
+    }
+
+    function isValidTrackedKeyword(data) {
+      return data.keys().hasAll([
+          'ownerId', 'keyword', 'targetDomain', 'searchIntent',
+          'currentPosition', 'monthlyVolume', 'createdAt'
+        ]) &&
+        data.keys().hasOnly([
+          'ownerId', 'keyword', 'targetDomain', 'searchIntent',
+          'currentPosition', 'monthlyVolume', 'createdAt'
+        ]) &&
+        data.ownerId is string && data.ownerId.size() >= 1 && data.ownerId.size() <= 128 && data.ownerId.matches('^[a-zA-Z0-9_\\-]+$') &&
+        data.keyword is string && data.keyword.size() >= 1 && data.keyword.size() <= 120 &&
+        data.targetDomain is string && data.targetDomain.size() >= 3 && data.targetDomain.size() <= 256 &&
+        data.searchIntent is string && data.searchIntent in ['commercial', 'transactional', 'informational', 'local'] &&
+        data.currentPosition is int && data.currentPosition >= 1 && data.currentPosition <= 200 &&
+        data.monthlyVolume is int && data.monthlyVolume >= 0 && data.monthlyVolume <= 10000000 &&
+        data.createdAt is timestamp;
+    }
+
+    // Collection 1: Public User Profile
+    match /users/{userId} {
+      allow get: if isSignedIn() && isValidId(userId) && (isOwner(userId) || isAdmin());
+      allow list: if isAdmin();
+      allow create: if isOwner(userId) && isValidId(userId) && isValidUserPublic(incoming()) &&
+        incoming().uid == request.auth.uid &&
+        incoming().createdAt == request.time &&
+        (incoming().role == 'subscriber' || isAdmin());
+      allow update: if isSignedIn() && isValidId(userId) && isValidUserPublic(incoming()) &&
+        incoming().uid == existing().uid &&
+        incoming().createdAt == existing().createdAt && (
+          isAdmin() ||
+          (isOwner(userId) && incoming().role == existing().role &&
+            incoming().diff(existing()).affectedKeys().hasOnly(['displayName', 'tier']))
+        );
+      allow delete: if isAdmin() && isValidId(userId);
+
+      // Subcollection: Private User PII (Pillar 1 Master Gate + Pillar 6 PII Isolation)
+      match /private/{docId} {
+        allow get: if isSignedIn() && isValidId(userId) && isValidId(docId) &&
+          (isOwner(userId) || isAdmin()) &&
+          exists(/databases/$(database)/documents/users/$(userId));
+        allow list: if false;
+        allow create: if isOwner(userId) && isValidId(userId) && isValidId(docId) &&
+          isValidUserPrivate(incoming()) &&
+          incoming().uid == request.auth.uid &&
+          incoming().updatedAt == request.time &&
+          exists(/databases/$(database)/documents/users/$(userId));
+        allow update: if isSignedIn() && isValidId(userId) && isValidId(docId) &&
+          isValidUserPrivate(incoming()) &&
+          incoming().uid == existing().uid &&
+          incoming().updatedAt == request.time &&
+          exists(/databases/$(database)/documents/users/$(userId)) && (
+            isAdmin() ||
+            (isOwner(userId) && incoming().diff(existing()).affectedKeys().hasOnly(['email', 'companyName', 'primaryWebsite', 'updatedAt']))
+          );
+        allow delete: if isAdmin() && isValidId(userId) && isValidId(docId);
+      }
+    }
+
+    // Collection 2: Subscriptions
+    match /subscriptions/{userId} {
+      allow get: if isSignedIn() && isValidId(userId) && (isOwner(userId) || isAdmin());
+      allow list: if isAdmin();
+      allow create: if isOwner(userId) && isValidId(userId) && isValidSubscription(incoming()) &&
+        incoming().ownerId == request.auth.uid &&
+        incoming().createdAt == request.time &&
+        incoming().updatedAt == request.time &&
+        exists(/databases/$(database)/documents/users/$(userId));
+      allow update: if isSignedIn() && isValidId(userId) && isValidSubscription(incoming()) &&
+        incoming().ownerId == existing().ownerId &&
+        incoming().createdAt == existing().createdAt &&
+        incoming().updatedAt == request.time && (
+          isAdmin() ||
+          (isOwner(userId) && incoming().diff(existing()).affectedKeys().hasOnly([
+            'planId', 'billingCycle', 'status', 'amountUsd',
+            'auditsUsed', 'auditLimit', 'keywordsTracked', 'keywordLimit',
+            'autoRenew', 'paymentLast4', 'nextBillingDate', 'updatedAt'
+          ]))
+        );
+      allow delete: if isAdmin() && isValidId(userId);
+    }
+
+    // Collection 3: Invoices (Immutable once created)
+    match /invoices/{invoiceId} {
+      allow get: if isSignedIn() && isValidId(invoiceId) && (existing().ownerId == request.auth.uid || isAdmin());
+      allow list: if isSignedIn() && (resource.data.ownerId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && isValidId(invoiceId) && isValidInvoice(incoming()) &&
+        incoming().ownerId == request.auth.uid &&
+        incoming().createdAt == request.time &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid));
+      allow update: if false;
+      allow delete: if isAdmin() && isValidId(invoiceId);
+    }
+
+    // Collection 4: Saved Audits
+    match /saved_audits/{auditId} {
+      allow get: if isSignedIn() && isValidId(auditId) && (existing().ownerId == request.auth.uid || isAdmin());
+      allow list: if isSignedIn() && (resource.data.ownerId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && isValidId(auditId) && isValidSavedAudit(incoming()) &&
+        incoming().ownerId == request.auth.uid &&
+        incoming().createdAt == request.time &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid));
+      allow update: if false;
+      allow delete: if isSignedIn() && isValidId(auditId) && (existing().ownerId == request.auth.uid || isAdmin());
+    }
+
+    // Collection 5: Tracked Keywords
+    match /tracked_keywords/{keywordId} {
+      allow get: if isSignedIn() && isValidId(keywordId) && (existing().ownerId == request.auth.uid || isAdmin());
+      allow list: if isSignedIn() && (resource.data.ownerId == request.auth.uid || isAdmin());
+      allow create: if isSignedIn() && isValidId(keywordId) && isValidTrackedKeyword(incoming()) &&
+        incoming().ownerId == request.auth.uid &&
+        incoming().createdAt == request.time &&
+        exists(/databases/$(database)/documents/users/$(request.auth.uid));
+      allow update: if isSignedIn() && isValidId(keywordId) && isValidTrackedKeyword(incoming()) &&
+        incoming().ownerId == existing().ownerId &&
+        incoming().createdAt == existing().createdAt && (
+          isAdmin() ||
+          (existing().ownerId == request.auth.uid &&
+            incoming().diff(existing()).affectedKeys().hasOnly(['currentPosition', 'monthlyVolume', 'searchIntent']))
+        );
+      allow delete: if isSignedIn() && isValidId(keywordId) && (existing().ownerId == request.auth.uid || isAdmin());
+    }
+  }
+}

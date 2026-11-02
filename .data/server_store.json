@@ -1,0 +1,358 @@
+{
+  "leads": [
+    {
+      "id": "LEAD-47343",
+      "name": "Website Audit Visitor",
+      "email": "audit@enterprise.in",
+      "company": "example.com",
+      "websiteUrl": "https://example.com/",
+      "serviceInterest": "Automated SEO Audit (India / Regional B2B)",
+      "message": "Submitted automated technical SEO audit for https://example.com/",
+      "preferredContact": "Email",
+      "source": "seo_audit",
+      "consentStatus": true,
+      "consentTimestamp": "2026-11-02T15:54:07.343Z",
+      "createdAt": "2026-11-02T15:54:07.343Z",
+      "status": "New",
+      "internalNotes": "Captured automatically via /free-seo-audit/ tool.",
+      "assignedTo": "Technical Audit Queue",
+      "lastFollowUpDate": "2026-11-02"
+    },
+    {
+      "id": "LEAD-1001",
+      "name": "Vikram Desai",
+      "email": "v.desai@industrial-precision-example.in",
+      "company": "Apex Industrial Systems",
+      "websiteUrl": "https://apex-industrial-example.in",
+      "serviceInterest": "Technical SEO",
+      "message": "Looking for a comprehensive crawl and faceted navigation audit ahead of our catalog migration.",
+      "preferredContact": "Email",
+      "source": "service_page",
+      "consentStatus": true,
+      "consentTimestamp": "2026-10-30T10:15:00Z",
+      "createdAt": "2026-10-30T10:15:00Z",
+      "status": "Qualified",
+      "internalNotes": "Initial discovery call completed. Technical architecture scope shared.",
+      "assignedTo": "Technical SEO Lead",
+      "lastFollowUpDate": "2026-11-01"
+    },
+    {
+      "id": "LEAD-1002",
+      "name": "Meera Patel",
+      "email": "meera@gujarat-medcare-example.org",
+      "company": "MedCare Multi-Specialty Group",
+      "websiteUrl": "https://gujarat-medcare-example.org",
+      "serviceInterest": "Local SEO",
+      "message": "Need regional profile governance and practitioner page optimization across 4 Ahmedabad clinics.",
+      "preferredContact": "Phone / Email",
+      "source": "consultation_booking",
+      "consentStatus": true,
+      "consentTimestamp": "2026-11-01T14:20:00Z",
+      "createdAt": "2026-11-01T14:20:00Z",
+      "status": "New",
+      "internalNotes": "Requested Tuesday afternoon consultation slot.",
+      "assignedTo": "Regional Strategy Lead",
+      "lastFollowUpDate": "2026-11-01"
+    }
+  ],
+  "articles": [
+    {
+      "id": "art-1",
+      "title": "Technical SEO Audit Checklist for Modern B2B & SaaS Websites",
+      "slug": "technical-seo-audit-checklist-b2b-saas",
+      "previousSlugs": [
+        "old-technical-seo-checklist"
+      ],
+      "category": "Technical SEO",
+      "categorySlug": "technical-seo",
+      "authorName": "Mehula ADMediaTek Editorial Team",
+      "authorRole": "Technical SEO Practice",
+      "status": "published",
+      "publishedAt": "2026-10-15",
+      "updatedAt": "2026-11-01",
+      "readingTimeMinutes": 7,
+      "excerpt": "A structured engineering guide to evaluating HTTP status codes, canonical alignment, SSRF-safe crawling, XML sitemaps, and JavaScript rendering for B2B websites.",
+      "seoTitle": "Technical SEO Audit Checklist for B2B & SaaS Websites | Mehula ADMediaTek",
+      "seoDescription": "Learn how to audit crawlability, canonical tags, structured data, and Core Web Vitals on modern B2B and SaaS websites without guesswork.",
+      "canonicalUrl": "/blog/technical-seo-audit-checklist-b2b-saas/",
+      "featuredImageAlt": "Diagram of HTTP crawl status, canonical tags, and structured data validation",
+      "toc": [
+        "1. Verify Indexability & Canonical Directives",
+        "2. Audit XML Sitemaps & Robots.txt Governance",
+        "3. Inspect Server HTML vs. Client-Rendered DOM",
+        "4. Validate Schema.org JSON-LD Without Fabrication"
+      ],
+      "bodySections": [
+        {
+          "heading": "1. Verify Indexability & Canonical Directives",
+          "paragraphs": [
+            "Every indexable commercial page requires a deterministic, self-referencing canonical URL and an unambiguous 200 OK HTTP status code. When query parameters for tracking or sorting generate multiple URLs serving identical content, search engines split crawl equity unless canonical tags and parameter handling are explicitly configured.",
+            "Before evaluating keyword density or backlinks, inspect the raw HTTP response headers and <head> tags to confirm that x-robots-tag and meta robots directives are not inadvertently blocking priority pages."
+          ]
+        },
+        {
+          "heading": "2. Audit XML Sitemaps & Robots.txt Governance",
+          "paragraphs": [
+            "An XML sitemap should function as a curated manifest of canonical, 200-OK, indexable URLs—never a dump of every route in your router. Exclude authentication screens, private SaaS dashboards, internal API routes, draft articles, and non-canonical redirect URLs.",
+            "Remember that robots.txt controls crawling, not indexing or security authorization. Always protect administrative and CRM routes with server-side authentication and role-based access control."
+          ]
+        },
+        {
+          "heading": "3. Inspect Server HTML vs. Client-Rendered DOM",
+          "paragraphs": [
+            "Single-page applications and modern hybrid frameworks must ensure that titles, meta descriptions, canonical links, primary H1 headings, and core internal navigation links are consistently accessible and updated per route.",
+            "Avoid lazy-loading your primary above-the-fold Largest Contentful Paint (LCP) element, and always declare explicit width and height attributes or aspect-ratio containers to keep Cumulative Layout Shift (CLS) below 0.1."
+          ]
+        },
+        {
+          "heading": "4. Validate Schema.org JSON-LD Without Fabrication",
+          "paragraphs": [
+            "Structured data helps search engines disambiguate Organization details, Services, BlogPostings, and BreadcrumbLists. However, injecting fake AggregateRating markup or unverified review counts violates search engine guidelines and risks manual actions.",
+            "Only populate JSON-LD fields that match visible, verified on-page content."
+          ]
+        }
+      ],
+      "relatedServices": [
+        "technical-seo",
+        "on-page-seo"
+      ]
+    },
+    {
+      "id": "art-2",
+      "title": "How to Map Commercial Search Intent Across Multi-Service B2B Funnels",
+      "slug": "commercial-search-intent-mapping-b2b",
+      "previousSlugs": [],
+      "category": "Keyword Strategy",
+      "categorySlug": "keyword-strategy",
+      "authorName": "Mehula ADMediaTek Editorial Team",
+      "authorRole": "Search Strategy Practice",
+      "status": "published",
+      "publishedAt": "2026-10-22",
+      "updatedAt": "2026-10-28",
+      "readingTimeMinutes": 6,
+      "excerpt": "Why high search volume often produces low B2B conversion rates, and how to separate commercial solution queries from top-of-funnel research.",
+      "seoTitle": "Commercial Search Intent Mapping for B2B Funnels | Mehula ADMediaTek",
+      "seoDescription": "Structure your B2B service pages, industry verticals, and resource hubs to eliminate keyword cannibalization and capture qualified pipeline.",
+      "canonicalUrl": "/blog/commercial-search-intent-mapping-b2b/",
+      "featuredImageAlt": "Matrix aligning search intent stages to dedicated service and industry landing pages",
+      "toc": [
+        "1. The B2B Volume Trap",
+        "2. One Canonical URL Per Intent Cluster",
+        "3. Connecting Informational Guides to Service Pages"
+      ],
+      "bodySections": [
+        {
+          "heading": "1. The B2B Volume Trap",
+          "paragraphs": [
+            "In B2B markets, broad head terms with tens of thousands of monthly searches are predominantly informational. Decision-makers evaluating an agency or enterprise software platform typically search with specific technical, industry, or regional modifiers.",
+            "Evaluating keywords solely by search volume leads teams to publish generic definitions rather than high-converting service and industry pages."
+          ]
+        },
+        {
+          "heading": "2. One Canonical URL Per Intent Cluster",
+          "paragraphs": [
+            "Keyword cannibalization happens when multiple service pages and blog articles target the exact same commercial query. Assign a single canonical URL to own each primary intent cluster, and use supporting articles to address narrow technical sub-questions."
+          ]
+        },
+        {
+          "heading": "3. Connecting Informational Guides to Service Pages",
+          "paragraphs": [
+            "Every educational article should include natural, descriptive internal links to the corresponding core service page and an interactive diagnostic option—such as an automated technical SEO audit—so interested readers have an immediate next step."
+          ]
+        }
+      ],
+      "relatedServices": [
+        "keyword-research",
+        "national-seo",
+        "content-marketing"
+      ]
+    },
+    {
+      "id": "art-3",
+      "title": "Local SEO Architecture for Regional Enterprises in Ahmedabad & Gujarat",
+      "slug": "local-seo-architecture-regional-enterprises",
+      "previousSlugs": [],
+      "category": "Local SEO",
+      "categorySlug": "local-seo",
+      "authorName": "Mehula ADMediaTek Editorial Team",
+      "authorRole": "Regional Search Practice",
+      "status": "published",
+      "publishedAt": "2026-10-29",
+      "updatedAt": "2026-11-01",
+      "readingTimeMinutes": 5,
+      "excerpt": "Practical standards for multi-branch citation hygiene, regional landing page differentiation, and LocalBusiness schema compliance.",
+      "seoTitle": "Local SEO Architecture for Regional B2B Enterprises | Mehula ADMediaTek",
+      "seoDescription": "Build durable regional search visibility across Ahmedabad and multi-city operations using verified entity signals and structured location pages.",
+      "canonicalUrl": "/blog/local-seo-architecture-regional-enterprises/",
+      "featuredImageAlt": "Regional search visibility framework showing location pages and entity verification",
+      "toc": [
+        "1. Entity Consistency & Verified Location Data",
+        "2. Avoiding Doorway Page Penalties on City Pages",
+        "3. Measuring Calls and Consultation Requests"
+      ],
+      "bodySections": [
+        {
+          "heading": "1. Entity Consistency & Verified Location Data",
+          "paragraphs": [
+            "Search engines cross-reference your organization name, address, telephone number, and primary category across your website footer, Contact page, LocalBusiness JSON-LD, and official business profiles.",
+            "Never publish placeholder addresses or unverified telephone numbers; wait until physical office details are confirmed so every citation matches 100%."
+          ]
+        },
+        {
+          "heading": "2. Avoiding Doorway Page Penalties on City Pages",
+          "paragraphs": [
+            "Swapping only the city name across twenty identical landing pages violates search engine doorway page policies. Only create dedicated regional or industry pages when you can provide genuinely distinct context, service scope, and local relevance."
+          ]
+        },
+        {
+          "heading": "3. Measuring Calls and Consultation Requests",
+          "paragraphs": [
+            "Tag regional profile links with structured UTM parameters so traffic and lead submissions from map listings are separated from standard organic search sessions in your analytics reports."
+          ]
+        }
+      ],
+      "relatedServices": [
+        "local-seo",
+        "on-page-seo"
+      ]
+    }
+  ],
+  "redirects": {
+    "old-technical-seo-checklist": "technical-seo-audit-checklist-b2b-saas"
+  },
+  "analyticsEvents": [
+    {
+      "eventName": "audit_request_submitted",
+      "path": "/free-seo-audit/",
+      "timestamp": "2026-11-02T15:54:07.340Z"
+    }
+  ],
+  "auditHistory": [
+    {
+      "id": "AUD-847425",
+      "submittedUrl": "https://example.com",
+      "normalizedUrl": "https://example.com/",
+      "contactEmail": "audit@enterprise.in",
+      "overallScore": 53,
+      "passedCount": 3,
+      "warningCount": 5,
+      "failedCount": 3,
+      "checks": [
+        {
+          "id": "http-status",
+          "checkName": "HTTP Response Status",
+          "category": "Indexability",
+          "status": "pass",
+          "observedValue": "HTTP 200",
+          "explanation": "Search engine crawlers require a clean 200 OK status on canonical landing pages.",
+          "recommendation": "Maintain clean 200 OK responses.",
+          "weight": 15
+        },
+        {
+          "id": "https-security",
+          "checkName": "HTTPS Encryption",
+          "category": "Technical Foundation",
+          "status": "pass",
+          "observedValue": "HTTPS Active",
+          "explanation": "HTTPS is a confirmed lightweight ranking signal and mandatory for user trust.",
+          "recommendation": "Keep TLS certificates active and enforce HSTS.",
+          "weight": 12
+        },
+        {
+          "id": "title-tag",
+          "checkName": "Title Tag Presence & Length",
+          "category": "On-Page Content",
+          "status": "warn",
+          "observedValue": "\"Example Domain\" (14 chars)",
+          "explanation": "Title tags define primary topical relevance and appear as the clickable headline in search results.",
+          "recommendation": "Write a unique, descriptive title between 30 and 60 characters.",
+          "weight": 14
+        },
+        {
+          "id": "meta-description",
+          "checkName": "Meta Description Optimization",
+          "category": "On-Page Content",
+          "status": "fail",
+          "observedValue": "Missing meta description",
+          "explanation": "Well-written meta descriptions improve organic click-through rate (CTR) from search snippets.",
+          "recommendation": "Provide a unique 120–160 character summary with a clear value proposition.",
+          "weight": 10
+        },
+        {
+          "id": "h1-heading",
+          "checkName": "Primary H1 Heading Hierarchy",
+          "category": "On-Page Content",
+          "status": "fail",
+          "observedValue": "0 <h1> tag(s) detected",
+          "explanation": "Each page should have one unmistakable primary H1 heading aligned with its core topic.",
+          "recommendation": "Add a descriptive primary H1 heading above the fold.",
+          "weight": 12
+        },
+        {
+          "id": "canonical-tag",
+          "checkName": "Canonical Link Specification",
+          "category": "Indexability",
+          "status": "warn",
+          "observedValue": "No <link rel=\"canonical\"> found",
+          "explanation": "Self-referencing canonical tags prevent duplicate content dilution from tracking parameters.",
+          "recommendation": "Add a self-referencing <link rel=\"canonical\"> tag in the document <head>.",
+          "weight": 12
+        },
+        {
+          "id": "robots-directives",
+          "checkName": "Meta Robots & Crawlability",
+          "category": "Indexability",
+          "status": "pass",
+          "observedValue": "index, follow (default)",
+          "explanation": "A noindex directive blocks the page from appearing in search results.",
+          "recommendation": "Page is permitted for indexing.",
+          "weight": 10
+        },
+        {
+          "id": "robots-sitemap",
+          "checkName": "Robots.txt & XML Sitemap Discovery",
+          "category": "Indexability",
+          "status": "fail",
+          "observedValue": "robots.txt: Not detected · Sitemap: Unverified",
+          "explanation": "Robots.txt and XML sitemaps guide crawler efficiency and indexation discovery.",
+          "recommendation": "Publish /robots.txt with an explicit Sitemap: declaration pointing to /sitemap.xml.",
+          "weight": 8
+        },
+        {
+          "id": "structured-data",
+          "checkName": "Schema.org JSON-LD Structured Data",
+          "category": "Structured Data & Links",
+          "status": "warn",
+          "observedValue": "0 JSON-LD block(s) found",
+          "explanation": "Structured data helps search engines understand Organization, Service, and Breadcrumb entities.",
+          "recommendation": "Implement Organization, Service, or BlogPosting JSON-LD structured data.",
+          "weight": 8
+        },
+        {
+          "id": "internal-links-alt",
+          "checkName": "Internal Links & Image Alt Coverage",
+          "category": "Structured Data & Links",
+          "status": "warn",
+          "observedValue": "0 internal links · 100% image alt coverage (0/0)",
+          "explanation": "Internal links distribute page authority and descriptive alt text supports accessibility and image search.",
+          "recommendation": "Add contextual internal links to core services and ensure all informative images include alt attributes.",
+          "weight": 8
+        },
+        {
+          "id": "tech-viewport-lang",
+          "checkName": "HTML Language, Viewport & Response Speed",
+          "category": "Technical Foundation",
+          "status": "warn",
+          "observedValue": "lang=\"missing\" · Viewport: Missing · TTFB/Fetch: 81ms (1 KB)",
+          "explanation": "Mobile viewport configuration, HTML language declaration, and fast server response times are core technical requirements.",
+          "recommendation": "Ensure <html lang=\"en\"> and <meta name=\"viewport\"> are declared in the document head.",
+          "weight": 8
+        }
+      ],
+      "completedAt": "2026-11-02T15:54:07.425Z",
+      "responseTimeMs": 81,
+      "pageSizeBytes": 577,
+      "isLiveFetch": true
+    }
+  ]
+}

@@ -1,0 +1,1876 @@
+# PROJECT: MEHULA ADMEDIATEK
+## A Premium SEO Agency Website by XENO Webworks
+
+### 1. YOUR ROLE
+
+Act as a senior full-stack developer, UI/UX designer, technical SEO architect, conversion rate optimization specialist, backend engineer, and digital marketing strategist.
+
+Your task is to design and develop a complete, production-ready B2B lead-generation website for **Mehula ADMediaTek**, an SEO and digital marketing agency based in Ahmedabad, India.
+
+The website is being developed by **XENO Webworks**, the web development agency responsible for its design, engineering, and delivery.
+
+This must be a complete, functional website—not merely a static landing page, visual mockup, or collection of disconnected UI components.
+
+Build a website that demonstrates the same qualities that an excellent SEO agency should deliver to its clients:
+
+- Fast loading and responsive design.
+- Search-engine-friendly architecture.
+- Excellent technical SEO foundations.
+- Professional branding and trustworthy messaging.
+- Conversion-focused user experience.
+- Scalable content management.
+- Functional lead-generation systems.
+- Maintainable, secure code.
+- Measurable business outcomes.
+
+Do not stop after creating the homepage. Build the complete website architecture, reusable components, functional forms, backend integrations, administrative features, and deployment-ready project structure.
+
+If a service requires credentials, API keys, or external integrations, build the integration interface and configuration system, document the setup requirements, and clearly distinguish working features from demonstrations.
+
+Never fabricate testimonials, client relationships, rankings, traffic statistics, revenue results, or business achievements.
+
+---
+
+# 2. BUSINESS OBJECTIVES
+
+The website must serve five primary business objectives.
+
+### Objective A: Generate qualified B2B leads
+
+Convert visitors into potential customers through:
+
+- Free SEO audit requests.
+- Consultation booking requests.
+- Contact forms.
+- Service-specific inquiries.
+- Lead-generating educational content.
+- An interactive SEO assessment tool.
+- An AI-assisted inquiry chatbot.
+
+### Objective B: Establish authority
+
+Present Mehula ADMediaTek as a professional SEO and digital marketing agency.
+
+Communicate expertise through clear service descriptions, useful educational resources, transparent processes, and verified case studies.
+
+### Objective C: Capture organic search traffic
+
+Build dedicated pages for each major service and optimize them for relevant commercial search intent.
+
+Create a scalable content architecture that allows the marketing team to publish new articles, create service pages, and improve metadata without developer assistance.
+
+### Objective D: Convert website visitors into consultations
+
+Every major page must provide a clear next step.
+
+Use contextual calls to action, well-designed forms, relevant proof points, and a consistent user journey.
+
+### Objective E: Demonstrate the capabilities of XENO Webworks
+
+The finished product should demonstrate that XENO Webworks can deliver custom websites that combine design, engineering, technical SEO, automation, and lead generation.
+
+Keep XENO Webworks' developer attribution separate from Mehula ADMediaTek's brand identity. If an attribution link is included, place it unobtrusively in the footer.
+
+---
+
+# 3. BRAND IDENTITY AND VISUAL DIRECTION
+
+Create a premium, modern B2B agency aesthetic.
+
+The design should communicate credibility, technical expertise, precision, and measurable growth.
+
+Avoid generic website-builder aesthetics, excessive gradients, unnecessary animations, cluttered layouts, and decorative elements that compete with the main message.
+
+### Design direction
+
+Use a combination of:
+
+- A clean, spacious layout.
+- Strong typography and clear visual hierarchy.
+- Professional dashboard-inspired graphics.
+- Restrained use of accent colors.
+- Subtle borders and shadows.
+- Well-organized cards.
+- Custom illustrations and original data visualizations.
+- Carefully designed service icons.
+- Meaningful whitespace.
+- Consistent spacing and component sizes.
+
+### Suggested color palette
+
+Use the following palette as a starting point:
+
+- Primary background: #FFFFFF
+- Secondary background: #F6F8FC
+- Primary text: #111827
+- Secondary text: #667085
+- Primary accent: #3157E8
+- Dark section background: #101828
+- Success indicator: #16A34A
+- Border color: #E5E7EB
+
+You may refine the palette to improve visual harmony, accessibility, and brand consistency.
+
+### Typography
+
+Use a modern sans-serif typeface such as Inter, Manrope, or an equivalent high-quality font.
+
+Establish a consistent type scale for:
+
+- Main headings.
+- Section headings.
+- Body text.
+- Labels.
+- Buttons.
+- Navigation.
+- Metadata.
+- Dashboard statistics.
+
+Use readable line lengths and comfortable spacing.
+
+### Brand requirements
+
+The primary brand is Mehula ADMediaTek.
+
+Use its official logo and brand assets if supplied. If these assets are unavailable, create a temporary typographic wordmark that can be replaced easily.
+
+Do not invent an official logo or imply that a temporary design is the company's approved branding.
+
+The website should feel custom-designed for an established SEO agency rather than adapted from a generic template.
+
+---
+
+# 4. COMPLETE WEBSITE ARCHITECTURE
+
+Build the following pages and route structure.
+
+## A. Homepage
+
+Route: /
+
+The homepage must communicate what the company does, whom it helps, and why a visitor should consider contacting it within the first few seconds.
+
+### Section 1: Navigation
+
+Create a responsive navigation bar containing:
+
+- Logo.
+- Home.
+- Services.
+- Industries.
+- Case Studies.
+- About.
+- Blog.
+- Contact.
+- Primary CTA: "Get a Free SEO Audit."
+
+The Services menu should support a desktop dropdown and a mobile-friendly expandable menu.
+
+Keep the primary CTA visible without overwhelming the navigation.
+
+### Section 2: Hero
+
+Use a strong headline that communicates a business outcome.
+
+Suggested headline:
+
+"Turn Search Visibility Into Sustainable Business Growth."
+
+Suggested supporting text:
+
+"Build a stronger organic presence with data-driven SEO strategies designed to help your business attract qualified visitors, earn relevant visibility, and create more opportunities for growth."
+
+Primary CTA: "Get a Free SEO Audit"
+
+Secondary CTA: "Explore Our Services"
+
+Include a professional visual on the right side, such as an original search-performance dashboard showing organic traffic trends, keyword visibility, and conversion metrics.
+
+These dashboard figures must be clearly identified as illustrative unless they are populated with verified company data.
+
+Do not fabricate business results.
+
+### Section 3: Trust and credibility
+
+Create a section for:
+
+- Client logos.
+- Verified client reviews.
+- Industry certifications.
+- Relevant partnerships.
+- Verified performance highlights.
+
+Only display real, authorized assets and claims.
+
+If the company has not supplied proof points, create a clean placeholder layout that can be populated later.
+
+Do not display invented logos or fake review counts.
+
+### Section 4: Core services
+
+Show the primary service categories in a visually appealing grid.
+
+Each service card must contain:
+
+- Service name.
+- Concise description.
+- Business benefit.
+- Relevant icon or illustration.
+- Link to the dedicated service page.
+
+Services:
+
+1. Local SEO.
+2. National SEO.
+3. Technical SEO.
+4. Keyword Research and Strategy.
+5. On-Page SEO.
+6. Link Building.
+7. Content Marketing.
+8. E-commerce SEO.
+
+Include an additional CTA leading to the full services directory.
+
+### Section 5: Why choose us?
+
+Build a section explaining the agency's approach.
+
+Potential themes include:
+
+- Data-informed decision-making.
+- Customized SEO strategies.
+- Technical expertise.
+- Transparent reporting.
+- Content aligned with search intent.
+- Focus on qualified organic traffic.
+- Continuous optimization.
+
+Present these as service principles unless verified evidence supports stronger claims.
+
+### Section 6: The SEO process
+
+Display a clear four-step process:
+
+1. Discover: Understand the business, audience, and competition.
+2. Audit: Identify technical, content, and authority-related opportunities.
+3. Execute: Implement the agreed SEO strategy.
+4. Measure and Improve: Monitor results and refine the strategy.
+
+Use a horizontal process layout on larger screens and a vertical timeline on mobile.
+
+### Section 7: Case studies
+
+Display verified case studies as cards.
+
+Each card should support:
+
+- Client or approved anonymized description.
+- Industry.
+- Project duration.
+- Starting conditions.
+- Strategy implemented.
+- Verified results.
+- Link to the full case study.
+
+Never invent clients or results.
+
+If case studies have not been provided, display an honest portfolio introduction and an editable placeholder state instead of fake success metrics.
+
+### Section 8: Industries served
+
+Build a visual section linking to industry-specific landing pages.
+
+Potential industries:
+
+- E-commerce.
+- Healthcare.
+- Education.
+- Real estate.
+- Professional services.
+- SaaS and technology.
+- Local businesses.
+- Hospitality.
+
+Only publish industry-specific claims when they can be supported.
+
+### Section 9: SEO insights
+
+Display recent articles from the content management system.
+
+Each article card should include:
+
+- Featured image.
+- Category.
+- Title.
+- Short excerpt.
+- Publication date.
+- Estimated reading time.
+- Link to the article.
+
+Include a link to the complete resource center.
+
+### Section 10: Free SEO audit CTA
+
+Create a prominent conversion section.
+
+Headline:
+
+"Discover What's Holding Your Website Back."
+
+Supporting text:
+
+"Request an initial SEO assessment to identify potential technical issues, search optimization opportunities, and areas worth investigating."
+
+CTA: "Check My Website"
+
+Link to the SEO audit tool.
+
+### Section 11: FAQ
+
+Create an accessible accordion featuring questions about:
+
+- SEO services.
+- SEO timelines.
+- Local SEO.
+- Technical SEO.
+- Reporting.
+- Consultations.
+- SEO audits.
+- Pricing and project scope.
+
+Write accurate, useful answers without guaranteeing specific ranking positions or timelines.
+
+### Section 12: Footer
+
+Include:
+
+- Company logo and short description.
+- Service links.
+- Industry links.
+- Resource links.
+- Contact information.
+- Ahmedabad location details, once verified.
+- Business email and telephone, once supplied.
+- Social media links, once verified.
+- Privacy Policy.
+- Terms and Conditions.
+- Cookie preferences where applicable.
+- Copyright notice.
+- Optional, unobtrusive "Website by XENO Webworks" attribution.
+
+Do not invent a street address, phone number, or email address.
+
+---
+
+# 5. DEDICATED SERVICE PAGES
+
+Every primary service must have its own indexable URL.
+
+Use these routes:
+
+/services/
+/services/local-seo/
+/services/national-seo/
+/services/technical-seo/
+/services/keyword-research/
+/services/on-page-seo/
+/services/link-building/
+/services/content-marketing/
+/services/ecommerce-seo/
+
+Create a reusable service-page template while allowing each page to have unique content.
+
+Every service page must contain the following sections.
+
+### 1. Service-specific hero
+
+Include:
+
+- A descriptive H1.
+- A clear explanation of the service.
+- The audience it serves.
+- Its primary business benefits.
+- A consultation CTA.
+- A relevant supporting visual.
+
+Avoid repeating the same generic hero copy across all services.
+
+### 2. Problems and opportunities
+
+Explain common problems that the service addresses.
+
+Examples for technical SEO:
+
+- Crawling and indexing problems.
+- Poor internal linking.
+- Duplicate URLs.
+- Incorrect canonical tags.
+- Slow page loading.
+- Mobile usability issues.
+- Structured-data errors.
+
+Examples for local SEO:
+
+- Incomplete business information.
+- Inconsistent local listings.
+- Weak local landing pages.
+- Poor local search visibility.
+- Unmanaged customer reviews.
+
+Describe problems accurately without promising that every website has them.
+
+### 3. Our approach
+
+Explain how the agency investigates, prioritizes, implements, and measures improvements.
+
+### 4. Deliverables
+
+Provide an editable list of deliverables relevant to each service.
+
+Examples:
+
+- Technical audit.
+- Keyword mapping.
+- Content recommendations.
+- On-page optimization.
+- Local landing-page recommendations.
+- Link profile analysis.
+- Performance reporting.
+
+Do not promise specific deliverables until the business confirms its actual service packages.
+
+### 5. Expected outcomes
+
+Describe potential benefits without guarantees.
+
+Distinguish between deliverables, measurable leading indicators, and eventual business outcomes.
+
+### 6. Case studies and related resources
+
+Show relevant verified case studies and links to supporting articles.
+
+If none are available, omit the section or use a transparent placeholder.
+
+### 7. FAQs
+
+Include service-specific questions and useful answers.
+
+### 8. Conversion section
+
+Use a CTA tailored to the service.
+
+Examples:
+
+- "Request a Local SEO Assessment."
+- "Discuss Your Technical SEO."
+- "Plan Your Content Strategy."
+
+### SEO requirements
+
+Every service page must have:
+
+- A unique title tag.
+- A unique meta description.
+- One clear primary H1.
+- Logical H2 and H3 headings.
+- A descriptive URL slug.
+- Relevant internal links.
+- Breadcrumb navigation.
+- Descriptive image alt text.
+- Appropriate structured data.
+- A self-referencing canonical URL.
+- Social-sharing metadata.
+- An XML sitemap entry when indexable.
+
+Avoid keyword stuffing and duplicate content.
+
+---
+
+# 6. INDUSTRY LANDING PAGES
+
+Create an industry directory at:
+
+/industries/
+
+Support dedicated pages such as:
+
+/industries/ecommerce/
+/industries/healthcare/
+/industries/real-estate/
+/industries/education/
+/industries/saas/
+/industries/local-businesses/
+
+Each industry page should explain:
+
+- The industry's search-related challenges.
+- Relevant SEO opportunities.
+- Appropriate services.
+- How a potential engagement would work.
+- Relevant verified examples, where available.
+- Frequently asked questions.
+- A targeted consultation CTA.
+
+Keep the content genuinely useful and specific.
+
+Do not generate dozens of nearly identical pages simply to target different keywords.
+
+Only publish pages with sufficient unique value.
+
+---
+
+# 7. CASE STUDIES AND RESULTS PORTFOLIO
+
+Create the routes:
+
+/case-studies/
+/case-studies/[slug]/
+
+Build a reusable case-study content model.
+
+Each case study should support:
+
+- Title.
+- Client name or approved anonymized identity.
+- Industry.
+- Project period.
+- Client-approved logo.
+- Business context.
+- Initial challenges.
+- Audit findings.
+- Strategy.
+- Implementation details.
+- Results.
+- Measurement methodology.
+- Supporting charts.
+- Client testimonial, if authorized.
+- Related services.
+- Related articles.
+- CTA.
+
+### Data visualizations
+
+Create reusable charts for:
+
+- Organic traffic over time.
+- Search impressions.
+- Click-through rate.
+- Keyword ranking distribution.
+- Qualified organic leads.
+- Organic conversion trends.
+
+Charts must use real supplied data.
+
+When no data exists, show a clearly labeled demonstration chart in the preview environment or hide the data-dependent component on the public website.
+
+Never present demonstration figures as actual client results.
+
+### Measurement integrity
+
+For every reported metric, record:
+
+- The reporting period.
+- The comparison period.
+- The source of the data.
+- The metric definition.
+- Any relevant caveats.
+
+Avoid implying that SEO alone caused a business outcome unless the evidence supports that conclusion.
+
+---
+
+# 8. BLOG AND CONTENT MANAGEMENT SYSTEM
+
+Create a complete resource center.
+
+Routes:
+
+/blog/
+/blog/[slug]/
+/blog/category/[slug]/
+
+### Blog listing page
+
+Include:
+
+- Search.
+- Category filters.
+- Featured article.
+- Article cards.
+- Pagination.
+- Related content.
+- Newsletter subscription only if a real subscription system is configured.
+
+### Article page
+
+Support:
+
+- Article title.
+- Author.
+- Publication date.
+- Updated date.
+- Featured image.
+- Table of contents.
+- Article body.
+- Heading hierarchy.
+- Images and captions.
+- Internal links.
+- External references.
+- Related articles.
+- Author information.
+- Share buttons.
+- Relevant CTA.
+- Breadcrumbs.
+- Article structured data.
+
+### CMS requirements
+
+The marketing team must be able to:
+
+- Create and edit articles.
+- Save drafts.
+- Preview unpublished content.
+- Publish and unpublish articles.
+- Schedule publication if supported by the chosen CMS.
+- Edit SEO titles and meta descriptions.
+- Change URL slugs.
+- Add canonical URLs.
+- Manage categories and tags.
+- Upload featured images.
+- Edit image alt text.
+- Configure social-sharing images.
+- Redirect old article URLs when slugs change.
+- Manage authors.
+- Update internal links and related content.
+
+Implement role-based access control.
+
+At minimum, support:
+
+- Administrator.
+- Editor.
+- Author.
+
+Protect administrative routes and enforce permissions on the server, not just in the interface.
+
+Use a real CMS or a secure custom content-management backend.
+
+Do not build a fake admin panel that only changes local browser state.
+
+---
+
+# 9. AUTOMATED SEO AUDIT TOOL
+
+Create an interactive SEO assessment tool.
+
+Route: /free-seo-audit/
+
+This should be a major lead-generation feature.
+
+### User interface
+
+Display a clean form with:
+
+- Website URL.
+- Work email.
+- Optional name.
+- Optional company name.
+- Optional target market.
+- Consent checkbox where required.
+
+Primary CTA: "Analyze My Website"
+
+Make it clear what information is collected and how it will be used.
+
+### User flow
+
+1. Visitor enters a website URL.
+2. Validate the URL.
+3. Validate the email address.
+4. Explain the analysis scope.
+5. Submit the request.
+6. Process the URL securely on the server.
+7. Display the results when analysis completes.
+8. Offer an option to request a detailed consultation.
+
+Avoid forcing visitors to provide unnecessary personal information before they can understand the tool's value.
+
+### Initial audit checks
+
+Where technically possible, assess:
+
+- HTTP response status.
+- HTTPS availability.
+- Page title presence and length.
+- Meta description presence and length.
+- H1 presence.
+- Canonical tag.
+- Robots directives.
+- Robots.txt availability.
+- XML sitemap discovery.
+- Basic internal-link counts.
+- Image alt-text coverage.
+- HTML language declaration.
+- Viewport configuration.
+- Redirect behavior.
+- Basic page size.
+- Response time.
+- Structured-data presence.
+- Obvious duplicate title or heading issues on the analyzed page.
+
+Optional checks may include mobile performance and Core Web Vitals when supported by a configured performance API.
+
+Clearly distinguish direct observations from estimates.
+
+Do not claim to have analyzed the entire website if only one page was checked.
+
+### Results page
+
+Display:
+
+- Overall assessment.
+- Passed checks.
+- Warnings.
+- Failed checks.
+- Individual explanations.
+- Recommended next actions.
+- Limitations of the assessment.
+- Consultation CTA.
+
+If using a score, document how it is calculated.
+
+Do not imply that the score is a Google ranking score or an official Google metric.
+
+### Report generation
+
+Generate a branded, printable report with:
+
+- Website URL.
+- Assessment timestamp.
+- Checks performed.
+- Findings.
+- Prioritized recommendations.
+- Relevant limitations.
+- Consultation CTA.
+
+If PDF generation is implemented, generate the report on the server using a suitable library.
+
+### Security requirements
+
+The audit tool accepts user-controlled URLs and therefore requires strict protections against server-side request forgery and abuse.
+
+Implement:
+
+- HTTP and HTTPS URL validation.
+- Blocking of loopback and private network addresses.
+- Blocking of link-local and cloud metadata addresses.
+- DNS resolution checks.
+- Validation of every resolved IP address.
+- Protection against DNS rebinding.
+- Redirect limits and destination revalidation.
+- Request timeouts.
+- Response-size limits.
+- Safe content-type handling.
+- Rate limiting.
+- Abuse monitoring.
+- Request quotas.
+- Safe error messages.
+
+Do not fetch arbitrary user-supplied URLs without these protections.
+
+Do not execute JavaScript from analyzed websites.
+
+Do not collect or store unnecessary website content.
+
+### Performance and cost controls
+
+Use background jobs if analysis takes more than a few seconds.
+
+Provide progress indicators, timeouts, retries where appropriate, and clear failure states.
+
+Cache suitable results to reduce duplicate requests and API costs.
+
+Use external APIs only when configured and document their limitations.
+
+---
+
+# 10. AI-POWERED LEAD-GENERATION CHATBOT
+
+Create an AI-assisted website chatbot.
+
+Possible interface: a compact floating button in the bottom-right corner.
+
+The chatbot must complement—not obstruct—the website's main conversion paths.
+
+### Capabilities
+
+The chatbot should be able to:
+
+- Explain the agency's verified services.
+- Answer questions using approved website content.
+- Explain the audit process.
+- Help visitors identify potentially relevant services.
+- Collect optional contact details.
+- Offer to arrange a consultation.
+- Direct visitors to relevant service pages.
+- Escalate questions it cannot answer reliably.
+
+### Conversation flow
+
+Example:
+
+Visitor: "My website isn't getting traffic. Can you help?"
+
+Chatbot: "We can help you investigate potential causes. Is your main concern technical issues, local visibility, content, or a broader SEO strategy?"
+
+The chatbot should ask only a small number of useful questions before offering a relevant next step.
+
+### Lead capture
+
+When a visitor expresses interest, the chatbot may request:
+
+- Name.
+- Work email.
+- Company website.
+- Primary business goal.
+- Preferred contact method.
+
+Explain why the information is requested and obtain appropriate consent.
+
+Save qualified inquiries to the lead-management system.
+
+### AI integration
+
+Use a configurable LLM provider.
+
+Keep API keys on the server in environment variables or a secure secrets manager.
+
+Never expose private API credentials in browser code.
+
+Use approved company information as the chatbot's knowledge base.
+
+Implement:
+
+- Input validation.
+- Rate limiting.
+- Conversation limits.
+- Safe error handling.
+- Protection against prompt injection.
+- Restricted tool permissions.
+- Data minimization.
+- Clear AI disclosure.
+- Human escalation.
+
+The chatbot must not invent pricing, testimonials, guarantees, certifications, or business results.
+
+When the required AI provider is not configured, show a helpful contact fallback rather than pretending that the chatbot is powered by AI.
+
+---
+
+# 11. LEAD MANAGEMENT AND CRM
+
+Build a lead-management system that captures inquiries from all major conversion points.
+
+Lead sources include:
+
+- Homepage contact forms.
+- Service-page forms.
+- SEO audit requests.
+- Chatbot conversations.
+- Consultation requests.
+- Blog CTAs.
+
+### Lead record
+
+Each lead should support:
+
+- Unique lead ID.
+- Name.
+- Email.
+- Company.
+- Website URL.
+- Service of interest.
+- Message.
+- Lead source.
+- Consent status and timestamp where applicable.
+- Creation timestamp.
+- Status.
+- Internal notes.
+- Assigned team member.
+- Last follow-up date.
+
+### Lead statuses
+
+Use a simple pipeline:
+
+1. New.
+2. Contacted.
+3. Qualified.
+4. Proposal Sent.
+5. Won.
+6. Lost.
+
+Allow authorized staff to update statuses and add notes.
+
+### Admin dashboard
+
+Create an authenticated dashboard showing:
+
+- Total leads.
+- New leads.
+- Leads by source.
+- Leads by service.
+- Recent inquiries.
+- Lead status distribution.
+- Audit requests.
+- Chatbot-generated inquiries.
+
+Only show meaningful analytics when supported by stored data.
+
+Provide filtering, search, pagination, and export functionality for authorized users.
+
+### Notifications
+
+When a qualified lead is submitted:
+
+- Save the lead in the database.
+- Show a confirmation message.
+- Send an email notification if an email provider is configured.
+- Optionally send an acknowledgment to the visitor.
+- Log delivery failures without losing the original lead.
+
+Use a transactional email service or equivalent integration.
+
+Do not store API credentials in frontend code.
+
+### CRM integrations
+
+Design the architecture so that a CRM can be integrated later.
+
+Support webhook-based integrations or a configured CRM connector.
+
+Do not claim integration with an external CRM unless the connection has been implemented and tested.
+
+---
+
+# 12. CONTACT AND CONSULTATION BOOKING
+
+Create the following routes:
+
+/contact/
+/book-a-consultation/
+
+### Contact page
+
+Include:
+
+- Clear introduction.
+- Contact form.
+- Service selection.
+- Business email, once verified.
+- Telephone, once verified.
+- Ahmedabad office details, once verified.
+- Business hours, once confirmed.
+- Optional map using a verified location.
+- FAQ section.
+- Privacy notice.
+
+### Contact form
+
+Fields:
+
+- Name.
+- Business email.
+- Company.
+- Website URL.
+- Service required.
+- Project description.
+- Preferred contact method.
+- Consent where required.
+
+Validate input on both the client and server.
+
+Use accessible labels and clear validation messages.
+
+Protect the form against spam and automated abuse.
+
+### Consultation booking
+
+Allow visitors to request a consultation.
+
+If a calendar integration is configured, display actual availability and confirm the booking through the connected service.
+
+Otherwise, create a consultation request form and clearly explain that the agency will follow up to confirm a time.
+
+Never display fabricated availability or claim that a meeting has been booked when it has not.
+
+---
+
+# 13. ABOUT PAGE
+
+Route: /about/
+
+Create a professional company profile page.
+
+Include:
+
+- Company introduction.
+- Mission and values.
+- Approach to SEO.
+- Working methodology.
+- Team section if verified team information is supplied.
+- Relevant qualifications and certifications if verified.
+- Contact CTA.
+
+Use authentic information.
+
+Do not invent founding dates, employee counts, client portfolios, office history, or professional credentials.
+
+---
+
+# 14. TECHNICAL SEO IMPLEMENTATION
+
+Treat technical SEO as a core engineering requirement.
+
+### A. Metadata
+
+Implement a centralized metadata system.
+
+Each indexable route must support:
+
+- Unique title tag.
+- Unique meta description.
+- Canonical URL.
+- Open Graph metadata.
+- Social-sharing image.
+- Robots directives.
+- Optional alternate-language metadata if multilingual support is implemented.
+
+Avoid duplicate titles and descriptions across service pages.
+
+### B. Structured data
+
+Use valid JSON-LD where appropriate.
+
+Implement suitable schemas for:
+
+- Organization.
+- LocalBusiness, if the actual business details support a specific subtype.
+- Service.
+- Article or BlogPosting.
+- BreadcrumbList.
+- Person, where appropriate for verified author information.
+
+Use actual business details.
+
+Only include review or aggregate-rating structured data when the reviews meet the applicable requirements.
+
+Do not add fabricated ratings or testimonials.
+
+Validate the output and avoid unnecessary duplicate schema from multiple plugins or components.
+
+### C. XML sitemap
+
+Generate an XML sitemap containing eligible canonical URLs.
+
+Include relevant published pages, articles, and case studies.
+
+Exclude:
+
+- Admin routes.
+- Private dashboards.
+- Authentication pages.
+- Internal API endpoints.
+- Unpublished content.
+- Duplicate or noncanonical URLs.
+
+Update the sitemap when indexable content changes.
+
+### D. Robots.txt
+
+Generate a correct robots.txt file.
+
+Allow crawling of public content.
+
+Disallow crawling of appropriate private or administrative routes where useful, but do not rely on robots.txt as an access-control mechanism.
+
+Include the sitemap location.
+
+### E. Canonicalization
+
+Implement consistent canonical URLs.
+
+Handle:
+
+- Trailing slashes.
+- Hostname variants.
+- HTTP-to-HTTPS redirects.
+- Duplicate query-parameter URLs.
+- Changed article slugs.
+- Legacy URLs.
+
+Use permanent redirects for genuinely permanent URL changes.
+
+Avoid redirect chains and loops.
+
+### F. Internal linking
+
+Create a consistent linking system connecting:
+
+- Homepage to service pages.
+- Services to relevant case studies.
+- Services to supporting blog articles.
+- Articles to related services.
+- Industry pages to relevant solutions.
+- Breadcrumbs to parent pages.
+
+Use descriptive anchor text naturally.
+
+### G. Rendering and indexing
+
+Ensure that important page content is available to search engines.
+
+Prefer server-side rendering or static generation for public pages where appropriate.
+
+If using a JavaScript-heavy frontend, verify that titles, canonical tags, content, and structured data render correctly.
+
+### H. Search Console readiness
+
+Prepare the site for Google Search Console and analytics integration.
+
+Support verification through the appropriate configuration mechanism.
+
+Do not claim ownership verification until it has actually been completed.
+
+### I. URL conventions
+
+Use readable URLs.
+
+Avoid unnecessary query parameters and generated numeric slugs for public content.
+
+Create redirects whenever a published slug changes.
+
+---
+
+# 15. PERFORMANCE AND CORE WEB VITALS
+
+Performance is a major selling point for this project.
+
+Build the site with a performance-first approach.
+
+### Targets
+
+Aim for the following Core Web Vitals thresholds at the 75th percentile of real-user measurements:
+
+- Largest Contentful Paint (LCP): 2.5 seconds or less.
+- Interaction to Next Paint (INP): 200 milliseconds or less.
+- Cumulative Layout Shift (CLS): 0.1 or less.
+
+Aim for a Lighthouse performance score of 90 or higher on representative pages, where practical.
+
+These are targets to verify, not guaranteed results.
+
+### Implementation requirements
+
+- Minimize unnecessary JavaScript.
+- Use code splitting.
+- Lazy-load below-the-fold images.
+- Avoid lazy-loading the primary LCP image.
+- Use responsive images.
+- Prefer modern image formats.
+- Set image dimensions to prevent layout shifts.
+- Optimize font loading.
+- Remove unused CSS.
+- Avoid excessive third-party scripts.
+- Cache static assets appropriately.
+- Compress responses.
+- Use efficient server rendering or static generation.
+- Keep animations lightweight.
+- Avoid large, unnecessary video backgrounds.
+- Load analytics scripts responsibly.
+- Avoid blocking the main thread with expensive tasks.
+
+Use a CDN when appropriate.
+
+Test the homepage, service pages, blog, audit tool, and contact page.
+
+Document performance bottlenecks and the measurements used to evaluate them.
+
+Do not report Lighthouse scores or Core Web Vitals measurements as verified until tests have been run.
+
+---
+
+# 16. RESPONSIVE DESIGN AND ACCESSIBILITY
+
+The website must work properly on:
+
+- Small mobile phones.
+- Large mobile phones.
+- Tablets.
+- Laptops.
+- Desktop monitors.
+- Large screens.
+
+Use a mobile-first implementation.
+
+### Mobile requirements
+
+- Responsive navigation.
+- Readable typography.
+- Properly sized touch targets.
+- Forms that fit the viewport.
+- Responsive tables and charts.
+- No horizontal overflow.
+- Appropriately spaced buttons.
+- Lightweight visual effects.
+- Fast loading on slower connections.
+
+### Accessibility
+
+Target WCAG 2.2 Level AA where practical.
+
+Implement:
+
+- Semantic HTML.
+- Keyboard-accessible navigation.
+- Visible focus states.
+- Accessible form labels.
+- Descriptive error messages.
+- Sufficient color contrast.
+- Appropriate alternative text.
+- Accessible dialogs.
+- Correct heading hierarchy.
+- Reduced-motion support.
+- Screen-reader-friendly status messages.
+
+Do not communicate success or failure using color alone.
+
+---
+
+# 17. RECOMMENDED TECHNOLOGY ARCHITECTURE
+
+Choose a technology stack appropriate to the capabilities of the AI website builder.
+
+Preferred architecture:
+
+### Frontend
+
+- Next.js with TypeScript.
+- React components.
+- Tailwind CSS or a similarly maintainable styling system.
+- Reusable UI components.
+- Server-side rendering and static generation where suitable.
+
+### Backend
+
+Use server-side application logic for:
+
+- Form processing.
+- Lead management.
+- Audit jobs.
+- Authentication.
+- Email notifications.
+- AI chatbot requests.
+- CMS operations.
+- Webhook processing.
+
+Next.js server functionality may be sufficient for the initial deployment.
+
+Use a separate Python service only when its capabilities materially improve the audit engine or other specialized tasks.
+
+Do not introduce unnecessary microservices.
+
+### Database
+
+Use PostgreSQL or a managed equivalent.
+
+Store:
+
+- Leads.
+- Audit requests.
+- Audit findings.
+- CMS metadata, if the CMS is custom.
+- Chatbot lead records.
+- User accounts and permissions.
+- Operational logs.
+
+Use migrations and define appropriate indexes.
+
+### CMS
+
+Choose one of these approaches:
+
+Option A: A headless CMS such as Sanity or another suitable managed CMS.
+
+Option B: A secure custom admin panel backed by PostgreSQL.
+
+Prefer a headless CMS when it meets the content team's needs without unnecessary engineering overhead.
+
+### Authentication
+
+Use a secure, maintained authentication solution.
+
+Implement role-based access control and protected server-side operations.
+
+Do not build custom password storage from scratch.
+
+### Hosting
+
+Choose a hosting platform compatible with the selected stack.
+
+The deployment should support:
+
+- HTTPS.
+- Environment variables.
+- Server-side functions.
+- Database connectivity.
+- Background jobs where required.
+- Scheduled tasks if needed.
+- Logging.
+- Monitoring.
+- Backup and recovery procedures.
+
+### Integrations
+
+Use configurable integrations for:
+
+- Google Analytics 4.
+- Google Search Console.
+- PageSpeed Insights API.
+- Transactional email.
+- CRM.
+- AI language model.
+- Consultation scheduling.
+
+The site must remain usable if optional third-party integrations have not been configured.
+
+Document the required environment variables without exposing their values.
+
+---
+
+# 18. DATABASE DESIGN
+
+Design a sensible relational database schema.
+
+Suggested entities:
+
+### Users
+
+- id.
+- name.
+- email.
+- authentication reference.
+- role.
+- created_at.
+- updated_at.
+
+### Leads
+
+- id.
+- name.
+- email.
+- company.
+- website_url.
+- service_interest.
+- message.
+- source.
+- status.
+- assigned_user_id.
+- consent_status.
+- created_at.
+- updated_at.
+
+### SEO Audit Requests
+
+- id.
+- submitted_url.
+- normalized_url.
+- contact_email, if collected.
+- request_status.
+- score, if supported.
+- started_at.
+- completed_at.
+- error_code.
+
+### SEO Audit Findings
+
+- id.
+- audit_request_id.
+- check_name.
+- result_status.
+- observed_value.
+- explanation.
+- recommendation.
+- severity.
+
+### Articles
+
+- id.
+- title.
+- slug.
+- excerpt.
+- content.
+- author_id.
+- category_id.
+- publication_status.
+- published_at.
+- updated_at.
+- SEO title.
+- SEO description.
+- canonical URL.
+
+### Categories
+
+- id.
+- name.
+- slug.
+- description.
+
+### Case Studies
+
+- id.
+- title.
+- slug.
+- industry.
+- summary.
+- content.
+- publication_status.
+- published_at.
+
+### Chatbot Lead Events
+
+- id.
+- lead_id.
+- conversation_reference.
+- event_type.
+- created_at.
+
+Adapt the schema to the selected CMS.
+
+Avoid storing unnecessary full chatbot transcripts or sensitive information.
+
+Define foreign keys, appropriate indexes, input constraints, and data-retention rules.
+
+---
+
+# 19. SECURITY AND PRIVACY
+
+Implement security as part of the architecture rather than adding it after development.
+
+Requirements:
+
+- Server-side input validation.
+- Output encoding.
+- Parameterized database queries or a safe ORM.
+- CSRF protections where applicable.
+- Secure session handling.
+- Appropriate cookie attributes.
+- Rate limiting.
+- Authentication and authorization.
+- Secure file uploads.
+- Secret management.
+- Protection against SSRF in the audit tool.
+- Safe error messages.
+- Dependency maintenance.
+- Appropriate security headers.
+- Audit logging for sensitive administrative actions.
+- Database backup strategy.
+- Defined data-retention practices.
+
+Use HTTPS in production.
+
+Never store secrets in source control.
+
+Never expose internal error stacks to visitors.
+
+### Privacy
+
+Create editable Privacy Policy and Terms pages.
+
+Explain what information is collected, why it is collected, how it is used, and how visitors can contact the company regarding their information.
+
+Implement consent mechanisms where required.
+
+Do not load nonessential tracking technologies before the appropriate consent when legally required.
+
+The website owner must review and approve legal content before publication.
+
+Do not present automatically generated legal text as legal advice.
+
+---
+
+# 20. ANALYTICS AND CONVERSION TRACKING
+
+Build an analytics-ready architecture.
+
+Track meaningful conversion events, subject to applicable consent requirements.
+
+Suggested events:
+
+- audit_form_started.
+- audit_request_submitted.
+- audit_completed.
+- contact_form_submitted.
+- consultation_requested.
+- service_cta_clicked.
+- chatbot_opened.
+- chatbot_lead_submitted.
+- article_cta_clicked.
+
+Use consistent event naming.
+
+Avoid sending personal information, email addresses, or full form contents to analytics platforms.
+
+Create a conversion-event documentation file.
+
+Allow analytics configuration through environment variables or a secure settings mechanism.
+
+If analytics credentials are missing, the website should still function normally.
+
+---
+
+# 21. CONTENT AND COPYWRITING REQUIREMENTS
+
+Write professional, clear, natural English.
+
+The tone should be:
+
+- Confident.
+- Business-focused.
+- Helpful.
+- Credible.
+- Technically informed.
+- Direct.
+- Free of exaggerated promises.
+
+Avoid phrases such as:
+
+- "Guaranteed number one on Google."
+- "Instantly dominate every search."
+- "100% guaranteed rankings."
+- "Become an overnight success."
+
+Instead, communicate how the agency identifies opportunities, implements strategies, and measures progress.
+
+Use relevant keywords naturally.
+
+Avoid keyword stuffing, repetitive service descriptions, generic filler, and excessive jargon.
+
+Write useful placeholder copy wherever actual business details are missing, but clearly mark business-specific content that needs verification before publication.
+
+The website must not contain fake testimonials, fake client logos, fake addresses, fabricated performance metrics, or unverified awards.
+
+---
+
+# 22. REUSABLE COMPONENT SYSTEM
+
+Create a consistent component library.
+
+Include:
+
+- Header.
+- Footer.
+- Desktop navigation.
+- Mobile navigation.
+- Primary button.
+- Secondary button.
+- Breadcrumbs.
+- Service card.
+- Industry card.
+- Case-study card.
+- Blog card.
+- Testimonial component.
+- CTA banner.
+- FAQ accordion.
+- Contact form.
+- Audit form.
+- Lead status badge.
+- Dashboard statistic card.
+- Chart component.
+- Loading indicator.
+- Empty state.
+- Error state.
+- Success state.
+- Pagination.
+- Search input.
+- Filter controls.
+- Modal.
+- Cookie preferences interface where needed.
+
+Keep components reusable and accessible.
+
+Use a consistent design-token system for colors, typography, spacing, radii, and shadows.
+
+---
+
+# 23. ERROR HANDLING AND EDGE CASES
+
+Handle common failure conditions properly.
+
+Examples:
+
+- Invalid website URL.
+- Invalid email.
+- Missing form fields.
+- Duplicate submissions.
+- Rate-limit exceeded.
+- Audit timeout.
+- Website unavailable.
+- Unsupported content type.
+- Third-party API failure.
+- Email delivery failure.
+- Missing CMS content.
+- Unpublished article.
+- Unknown route.
+- Unauthorized dashboard access.
+- Expired session.
+- Database unavailable.
+
+Display friendly messages without revealing internal system details.
+
+Provide retry options where appropriate.
+
+Do not lose a successfully submitted lead merely because a notification email failed.
+
+Include loading, success, empty, and error states for every major interactive feature.
+
+---
+
+# 24. TESTING AND QUALITY ASSURANCE
+
+Before declaring the project complete, verify its functionality.
+
+### Functional tests
+
+Test:
+
+- Every navigation link.
+- Every service page.
+- Contact form submission.
+- Audit request submission.
+- Audit result rendering.
+- Chatbot interaction.
+- Lead creation.
+- Lead status updates.
+- Admin authentication.
+- Role-based permissions.
+- CMS article creation and publication.
+- Metadata editing.
+- Slug changes and redirects.
+- Search and filtering.
+- Pagination.
+- Error handling.
+
+### SEO tests
+
+Verify:
+
+- Unique titles.
+- Unique meta descriptions.
+- Canonical URLs.
+- Sitemap validity.
+- Robots.txt behavior.
+- Structured data validity.
+- Breadcrumbs.
+- Internal links.
+- Redirect behavior.
+- Indexability of intended public pages.
+- Exclusion of private pages.
+- Server-rendered metadata where applicable.
+
+### Accessibility tests
+
+Verify keyboard navigation, form labels, focus states, contrast, and responsive behavior.
+
+### Performance tests
+
+Run Lighthouse or equivalent tests on representative pages.
+
+Inspect real performance bottlenecks instead of optimizing solely for a numerical score.
+
+### Security tests
+
+Verify:
+
+- Authentication protections.
+- Authorization rules.
+- Input validation.
+- Rate limits.
+- Secure environment-variable handling.
+- Audit URL protections.
+- API error handling.
+- Safe database access.
+
+### Browser testing
+
+Test current major desktop and mobile browsers.
+
+Resolve critical errors before deployment.
+
+Do not mark a feature as complete simply because its interface looks correct.
+
+---
+
+# 25. DEPLOYMENT AND DOCUMENTATION
+
+Deliver a project that can be maintained after handover.
+
+Include:
+
+- Complete source code.
+- Clear project structure.
+- Dependency manifest.
+- Database schema and migrations.
+- Environment-variable example file.
+- CMS setup instructions.
+- Admin setup instructions.
+- Integration setup guide.
+- Deployment instructions.
+- Testing instructions.
+- SEO launch checklist.
+- Backup and recovery notes.
+- Known limitations.
+- Maintenance recommendations.
+
+Provide a README containing commands to install dependencies, run the development server, run tests, apply database migrations, and build the production version.
+
+Use placeholders in the environment-variable example file.
+
+Never include actual secret keys.
+
+Provide a clear checklist of tasks requiring access to external accounts.
+
+---
+
+# 26. ACCEPTANCE CRITERIA
+
+The project is considered ready for review when all of the following are satisfied.
+
+1. Every required public page exists and uses the correct branding.
+2. All primary navigation and CTA links work.
+3. Every core service has a dedicated, unique page.
+4. The website adapts correctly to mobile, tablet, and desktop screens.
+5. Important page content and metadata are search-engine accessible.
+6. Canonical URLs, robots.txt, and the XML sitemap are configured correctly.
+7. Structured data is valid and uses verified business information.
+8. The content-management workflow works with a real backend.
+9. Contact and audit submissions are validated and stored persistently.
+10. The audit tool performs actual checks and reports its limitations.
+11. The chatbot uses a real configured AI provider or clearly falls back to a non-AI contact flow.
+12. Lead management requires authentication and enforces authorization.
+13. External integrations handle missing configuration gracefully.
+14. Core forms have loading, success, and error states.
+15. Critical security protections are implemented and tested.
+16. Performance has been measured on representative pages.
+17. No fabricated testimonials, client logos, or business results appear.
+18. The project includes setup, testing, deployment, and maintenance documentation.
+19. No critical build errors remain.
+20. All known incomplete features are documented honestly.
+
+---
+
+# 27. IMPLEMENTATION ORDER
+
+Build the project in the following order.
+
+### Phase 1: Foundation
+
+- Inspect the existing project.
+- Choose and configure the architecture.
+- Establish the design system.
+- Configure routing.
+- Build the responsive header and footer.
+- Establish the database and authentication foundation.
+
+### Phase 2: Core marketing website
+
+- Homepage.
+- Services directory.
+- Dedicated service pages.
+- Industry pages.
+- About page.
+- Contact page.
+- Case-study templates.
+- Blog and article templates.
+
+### Phase 3: Content management
+
+- CMS integration.
+- Authentication.
+- Content editing.
+- Metadata editing.
+- Slug management.
+- Redirect management.
+
+### Phase 4: Lead generation
+
+- Contact forms.
+- Consultation requests.
+- Lead database.
+- Admin dashboard.
+- Notifications.
+- CRM integration points.
+
+### Phase 5: Advanced features
+
+- Automated SEO audit.
+- Audit report generation.
+- AI chatbot.
+- Chatbot lead capture.
+- Analytics event tracking.
+
+### Phase 6: SEO and performance
+
+- Structured data.
+- Sitemap.
+- Robots.txt.
+- Canonicalization.
+- Internal linking.
+- Image optimization.
+- Performance testing.
+
+### Phase 7: Quality assurance and deployment
+
+- Functional testing.
+- Accessibility checks.
+- Security checks.
+- Responsive testing.
+- Production build.
+- Deployment documentation.
+- Final handover checklist.
+
+Complete each phase with working functionality before moving to the next.
+
+Prioritize a reliable, deployable implementation over unnecessary complexity.
+
+---
+
+# 28. FINAL INSTRUCTION
+
+Build the complete Mehula ADMediaTek website as a professional B2B lead-generation platform developed by XENO Webworks.
+
+Begin by inspecting the available project environment and selecting the most appropriate supported technology stack.
+
+Then implement the complete site in logical phases, maintaining consistent design, architecture, security, and quality throughout.
+
+Do not stop after producing a homepage, wireframe, or frontend prototype.
+
+Do not simulate backend functionality when persistent storage or real integrations are required.
+
+Do not fabricate business information or report unperformed tests as successful.
+
+If a required external integration cannot be completed without credentials, implement the appropriate integration boundary, document the missing configuration, and ensure the rest of the website continues to work.
+
+At completion, provide:
+
+1. A summary of the implemented pages and features.
+2. The selected technology stack.
+3. The database and CMS architecture.
+4. The working integrations.
+5. The integrations requiring credentials.
+6. The environment variables required for deployment.
+7. The test results actually obtained.
+8. Any remaining limitations.
+9. The steps required to deploy the website to production.
+
+The final result should look polished, function reliably, support future growth, and demonstrate the technical and commercial value of XENO Webworks.

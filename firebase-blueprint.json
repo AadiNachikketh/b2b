@@ -1,0 +1,301 @@
+{
+  "entities": {
+    "UserPublic": {
+      "title": "UserPublic",
+      "description": "Publicly accessible user metadata and subscription tier.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "displayName": {
+          "type": "string",
+          "maxLength": 100
+        },
+        "role": {
+          "type": "string",
+          "enum": ["subscriber", "author", "editor", "admin"]
+        },
+        "tier": {
+          "type": "string",
+          "enum": ["free", "starter", "growth", "agency"]
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "displayName", "role", "tier", "createdAt"]
+    },
+    "UserPrivate": {
+      "title": "UserPrivate",
+      "description": "Private PII and company details for an authenticated user.",
+      "type": "object",
+      "properties": {
+        "uid": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "email": {
+          "type": "string",
+          "maxLength": 254,
+          "format": "email"
+        },
+        "companyName": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "primaryWebsite": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": ["uid", "email", "companyName", "primaryWebsite", "updatedAt"]
+    },
+    "Subscription": {
+      "title": "Subscription",
+      "description": "Automated SaaS subscription and billing state for a user.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "planId": {
+          "type": "string",
+          "enum": ["free", "starter", "growth", "agency"]
+        },
+        "billingCycle": {
+          "type": "string",
+          "enum": ["monthly", "annual"]
+        },
+        "status": {
+          "type": "string",
+          "enum": ["active", "past_due", "canceled"]
+        },
+        "amountUsd": {
+          "type": "number"
+        },
+        "auditsUsed": {
+          "type": "integer"
+        },
+        "auditLimit": {
+          "type": "integer"
+        },
+        "keywordsTracked": {
+          "type": "integer"
+        },
+        "keywordLimit": {
+          "type": "integer"
+        },
+        "autoRenew": {
+          "type": "boolean"
+        },
+        "paymentLast4": {
+          "type": "string",
+          "maxLength": 4
+        },
+        "nextBillingDate": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "planId",
+        "billingCycle",
+        "status",
+        "amountUsd",
+        "auditsUsed",
+        "auditLimit",
+        "keywordsTracked",
+        "keywordLimit",
+        "autoRenew",
+        "paymentLast4",
+        "nextBillingDate",
+        "createdAt",
+        "updatedAt"
+      ]
+    },
+    "Invoice": {
+      "title": "Invoice",
+      "description": "Billing invoice record for automated SaaS subscription cycles.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "invoiceNumber": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "planName": {
+          "type": "string",
+          "maxLength": 60
+        },
+        "billingCycle": {
+          "type": "string",
+          "enum": ["monthly", "annual"]
+        },
+        "amountUsd": {
+          "type": "number"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["paid", "void"]
+        },
+        "issuedDate": {
+          "type": "string",
+          "maxLength": 40
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "invoiceNumber",
+        "planName",
+        "billingCycle",
+        "amountUsd",
+        "status",
+        "issuedDate",
+        "createdAt"
+      ]
+    },
+    "SavedAudit": {
+      "title": "SavedAudit",
+      "description": "Saved automated SEO audit report for a subscriber.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "targetUrl": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "overallScore": {
+          "type": "integer"
+        },
+        "passedCount": {
+          "type": "integer"
+        },
+        "warningCount": {
+          "type": "integer"
+        },
+        "failedCount": {
+          "type": "integer"
+        },
+        "summaryText": {
+          "type": "string",
+          "maxLength": 1000
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "targetUrl",
+        "overallScore",
+        "passedCount",
+        "warningCount",
+        "failedCount",
+        "summaryText",
+        "createdAt"
+      ]
+    },
+    "TrackedKeyword": {
+      "title": "TrackedKeyword",
+      "description": "Tracked search keyword and position in the subscriber's SaaS dashboard.",
+      "type": "object",
+      "properties": {
+        "ownerId": {
+          "type": "string",
+          "maxLength": 128,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "keyword": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "targetDomain": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "searchIntent": {
+          "type": "string",
+          "enum": ["commercial", "transactional", "informational", "local"]
+        },
+        "currentPosition": {
+          "type": "integer"
+        },
+        "monthlyVolume": {
+          "type": "integer"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      },
+      "required": [
+        "ownerId",
+        "keyword",
+        "targetDomain",
+        "searchIntent",
+        "currentPosition",
+        "monthlyVolume",
+        "createdAt"
+      ]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserPublic",
+      "description": "Public user profiles and current tier"
+    },
+    "/users/{userId}/private/{docId}": {
+      "schema": "UserPrivate",
+      "description": "Private PII and organization profile for a user"
+    },
+    "/subscriptions/{userId}": {
+      "schema": "Subscription",
+      "description": "SaaS subscription and automated billing settings per user"
+    },
+    "/invoices/{invoiceId}": {
+      "schema": "Invoice",
+      "description": "Automated billing invoices belonging to users"
+    },
+    "/saved_audits/{auditId}": {
+      "schema": "SavedAudit",
+      "description": "User-saved automated SEO technical audits"
+    },
+    "/tracked_keywords/{keywordId}": {
+      "schema": "TrackedKeyword",
+      "description": "User-tracked organic keywords in the SaaS workspace"
+    }
+  }
+}
